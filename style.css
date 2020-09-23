@@ -1,0 +1,226 @@
+:root {
+  --background: rgb(168, 168, 168);
+  /* left */
+  --leftBackground: rgb(46, 44, 44);
+  --color-left: rgb(255, 255, 255);
+  --header-left: rgb(255, 255, 255);
+  --color-header-left: rgb(20, 19, 19);
+  /* right */
+  --color-right: rgb(0, 0, 0);
+  --rightBackground: rgb(255, 255, 255);
+  --color-header-right: rgb(255, 255, 255);
+  --header-right: rgb(54, 54, 54);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  min-height: 100vh;
+  padding: 1rem;
+}
+h1 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+h4 {
+  font-size: 1.4rem;
+}
+h5 {
+  font-size: 1rem;
+}
+p {
+  font-size: 1.2rem;
+}
+main {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+  box-shadow: -1px 0 1px rgba(255, 255, 255, 1),
+    1px 0 1px rgba(255, 255, 255, 1);
+}
+/* ============ Left Side=============== */
+.left {
+  color: var(--color-left);
+  display: flex;
+  flex-direction: column;
+  background: var(--leftBackground);
+  width: 30%;
+}
+.profile-contact .contact {
+  width: 100%;
+}
+.profile-contact .detail {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1rem;
+}
+
+.profile-contact i {
+  margin-right: 20px;
+}
+.img-profile {
+  align-self: Center;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  margin-bottom: 50px;
+  margin: 2rem auto;
+}
+.img-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-details .detail {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.left .detail {
+  padding: 0rem 2rem;
+}
+.left h3 {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 80%;
+  color: var(--color-header-left);
+  position: relative;
+  padding: 0.7rem 2rem 0.7rem 0.3rem;
+  background: var(--header-left);
+}
+h5 span {
+  color: rgb(92, 92, 92);
+  margin-left: 5px;
+}
+/* ================== Righ ================== */
+.right {
+  width: 70%;
+  background: var(--rightBackground);
+  border-left: 5px solid var(--header-right);
+  padding: 1rem 3rem;
+  color: var(--color-right);
+}
+
+.right .detail {
+  margin: 1rem auto;
+
+  display: Flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-around;
+}
+.right h1 {
+  text-align: center;
+}
+.right h3 {
+  position: relative;
+  background: var(--header-right);
+  padding: 0.7rem;
+  border-radius: 5px;
+  color: var(--color-header-right);
+}
+.right h3::before {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 2px;
+  background: var(--header-right);
+  left: -3rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.right .content {
+  padding: 0.5rem;
+}
+
+.content.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-column-gap: 1rem;
+}
+.content.github a {
+  text-decoration: none;
+  color: var(--color-right);
+}
+.workEXP p {
+  margin: 10px 0px;
+  position: relative;
+}
+.workEXP p::after {
+  content: "";
+}
+
+progress {
+  height: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  width: 300px;
+}
+progress::after {
+  display: inline;
+  content: attr(value) "%";
+  line-height: 2rem;
+}
+@media screen and (max-width: 1440px) {
+  main {
+    width: 80%;
+  }
+  .left {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 0;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+  main {
+    width: 100%;
+  }
+  .left {
+    width: 40%;
+  }
+  .left .detail {
+    padding: 0rem 0.5rem;
+  }
+}
+@media screen and (max-width: 565px) {
+  main {
+    flex-direction: column;
+    width: 100%;
+  }
+  .left {
+    width: 100%;
+    padding: 5rem 0;
+  }
+  .right {
+    width: 100%;
+    border: none;
+  }
+}
+@media screen and (max-width: 375px) {
+  .skill {
+    width: 80%;
+  }
+  progress {
+    width: 100%;
+  }
+}
